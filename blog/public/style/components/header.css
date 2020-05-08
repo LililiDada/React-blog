@@ -1,0 +1,50 @@
+.header{
+    background-color: #ffffff;
+    overflow: hidden;
+    height: 4.2rem;
+    /* border-bottom: 1px solid #ccc; */
+    box-shadow: 0 1px 5px rgba(0,0,0,.1);
+    line-height: 4.2rem;
+}
+.header-title{
+    display: flex;
+    align-items: center;
+}
+.header-logo{
+    width: 6rem;
+    padding-right: .4rem;
+}
+.header-txt{
+    color: #333333;
+    font-weight: 600;
+    font-size: 1.4rem;
+}
+
+/* 修改导航菜单 */
+.ant-menu-item-active{
+    color: #EB5055 !important;
+    border-bottom: 2px solid transparent !important;
+}
+.ant-menu-item-selected{
+    color: #EB5055 !important;
+    border-bottom: 2px solid transparent !important;
+}
+.header-menu{
+    text-align: right;
+}
+.ant-menu-item:hover, .ant-menu-item-active, .ant-menu:not(.ant-menu-inline) .ant-menu-submenu-open, .ant-menu-submenu-active{
+    color:  #EB5055 !important;
+    border-bottom: 2px solid transparent !important;
+}
+.ant-menu-horizontal > .ant-menu-item, .ant-menu-horizontal > .ant-menu-submenu {
+    border-bottom: 2px solid transparent !important; 
+}
+.ant-menu-submenu-title:hover {
+    color:  #EB5055 !important;
+}
+.ant-menu-submenu-title{
+    font-size: 2.9rem;
+}
+.ant-menu-horizontal{
+    border-bottom: none;
+}
