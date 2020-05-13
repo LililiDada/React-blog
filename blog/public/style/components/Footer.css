@@ -1,0 +1,17 @@
+.footer{
+    background-color: #ffffff;
+    height: 3.5rem;
+    box-shadow: 1px 0 5px rgba(0,0,0,.1);
+    font-size: 14px;
+    color: #333333;
+    text-align: center;
+    font-weight: 600;
+}
+.footer-top{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.footer-img{
+    width: 50px;
+}

@@ -7,11 +7,11 @@ const Header = ()=>(
 
     <div className="header">
         <Row align="middle" justify="center">
-            <Col xs={13} sm={10} md={10} lg={9} xl={9} className="header-title">
+            <Col xs={13} sm={10} md={10} lg={11} xl={9} className="header-title">
                 <img className="header-logo" src={Logo} />
                 <span className="header-txt">李大山歪</span>
             </Col>
-            <Col xs={7} sm={8} md={8} lg={7} xl={7} className="header-menu">
+            <Col xs={7} sm={8} md={8} lg={9} xl={7} className="header-menu">
                 <Menu mode="horizontal">
                     <Menu.Item key="home">
                         <HomeOutlined />
@@ -21,7 +21,7 @@ const Header = ()=>(
                         <BranchesOutlined />
                         归档
                     </Menu.Item>
-                    <Menu.Item key="life">
+                    <Menu.Item key="life" className='life'>
                         <SmileOutlined />
                         生活
                     </Menu.Item>
