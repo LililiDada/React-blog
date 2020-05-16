@@ -3,7 +3,9 @@ import React from 'react'
 import Head from 'next/head'
 import Header from '../components/Header.js'
 import Footer from '../components/Footer.js'
+import servicePath from '../config/apiUrl.js'
 import MarkNav from 'markdown-navbar';
+import axios from 'axios'
 import 'markdown-navbar/dist/navbar.css';
 import "../public/style/pages/detailed.css"
 import ReactMarkdown from 'react-markdown'
@@ -81,5 +83,16 @@ const Detailed = () => {
       {/* <Footer /> */}
     </div>
   )
+}
+
+Detailed.getInitialProps = async(context)=>{
+  let id = context.query.id;
+  const promise = new Promise((resolve)=>{
+    axios(servicePath.getArticleById+id).then((res)=>{
+      console.log(res.data.data[0])
+      resolve(res.data.data[0])
+    })
+  })
+  return await promise
 }
 export default Detailed
