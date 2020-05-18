@@ -39,6 +39,12 @@ class HomeController extends Controller {
     const results = await this.app.mysql.query(sql);
     this.ctx.body = { data: results };
   }
+
+  async getAboutList() {
+    let sql = "SELECT id,content,type,FROM_UNIXTIME(create_time,'%b  %d, %Y') as createTime FROM about ORDER BY create_time DESC";
+    const results = await this.app.mysql.query(sql);
+    this.ctx.body = { data: results };
+  }
 }
 
 module.exports = HomeController;

@@ -1,0 +1,57 @@
+.about-main{
+    padding:0 15px;
+}
+.about-page{
+    margin-bottom: 40px;
+}
+.about-title{
+    font-size: 20px;
+    color: #222;
+    margin-bottom: 1.5rem;
+}
+.about-title::before{
+    content: "#";
+    color: #eb5055;
+    margin-right: 10px;
+}
+.about-intro{
+    margin: 10px 20px 0;
+    position: relative;
+}
+.about-date{
+    color: tomato;
+}
+/* 时间轴 */
+.about-timeline{
+    padding: 0;
+    padding-left: 10px;
+}
+.about-timeline::before{
+    background-color: #505050;
+    content: '';
+    margin-left: -1px;
+    position: absolute;
+    top: 0;
+    left: 0.68rem;
+    width: 2px;
+    height: 100%;
+}
+.about-timeline-event{
+    position: relative;
+    margin-bottom: 10px;
+}
+.about-timeline-event-icon{
+    transform: rotate(45deg);
+    background-color: #505050;
+    outline: 4px solid white;
+    display: block;
+    margin: 0.5rem 0.5rem 0.5rem -0.5rem;
+    position: absolute;
+    top: -0.1rem;
+    left: 0.24rem;
+    width: .7rem;
+    height: .7rem;
+}
+.about-timeline-event-des{
+    padding:0rem  1rem .5rem 2rem;
+}

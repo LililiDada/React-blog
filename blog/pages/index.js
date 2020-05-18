@@ -31,50 +31,50 @@ const Home = (list) => {
   };
 
   return(
-    <div className='index-page'>
+    <div className='blog-page'>
       <Head>
         <title>Home</title>
       </Head>
       <Header />
-        <Row className="comm-main" type="flex" justify="center">
-          <Col className="comm-left" xs={18} sm={18} md={16} lg={20} xl={14}  >
-          <List
-            grid={{ gutter: 35, column: 3 ,xs:1,sm:2, md:2,lg:3,xl:3}}
-            dataSource={mylist}
-            renderItem={item => (
-              <List.Item className='comm-list'>
-                <Link  href={{pathname:'/detailed',query:{id:item.id}}} >
-                  <a>
-                    <div className="list-top" style={{backgroundImage: `url(${backImg})`}}>
-                      <div className="list-mask">
-                            { item.intorduce.substr(0,[90]) }
-                            { item.intorduce.length>90 ? <span>...</span> : null }
-                      </div>
-                      <div className="list-desco"></div>
+      <Row className="comm-main" type="flex" justify="center">
+        <Col className="comm-left" xs={18} sm={18} md={16} lg={20} xl={14}  >
+        <List
+          grid={{ gutter: 35, column: 3 ,xs:1,sm:2, md:2,lg:3,xl:3}}
+          dataSource={mylist}
+          renderItem={item => (
+            <List.Item className='comm-list'>
+              <Link  href={{pathname:'/detailed',query:{id:item.id}}} >
+                <a>
+                  <div className="list-top" style={{backgroundImage: `url(${backImg})`}}>
+                    <div className="list-mask">
+                          { item.intorduce.substr(0,[90]) }
+                          { item.intorduce.length>90 ? <span>...</span> : null }
                     </div>
-                  </a>
-                </Link>
-                
-                <div className="list-title">
-                <Link  href={{pathname:'/detailed',query:{id:item.id}}} ><a>{item.title}</a></Link>
-                </div>
-                <div className="list-footer">
-                    <div className="list-time">{item.addTime}</div>
-                    <div className="list-footer-tag">
-                      <div className="list-label"><a>{item.typeName}</a></div>
-                      <div className="list-tag">
-                        <img src={`/assets/icon/202005150${item.num}.png`} className="list-tag-img" />
-                      </div>
+                    <div className="list-desco"></div>
+                  </div>
+                </a>
+              </Link>
+              
+              <div className="list-title">
+              <Link  href={{pathname:'/detailed',query:{id:item.id}}} ><a>{item.title}</a></Link>
+              </div>
+              <div className="list-footer">
+                  <div className="list-time">{item.addTime}</div>
+                  <div className="list-footer-tag">
+                    <div className="list-label"><a>{item.typeName}</a></div>
+                    <div className="list-tag">
+                      <img src={`/assets/icon/202005150${item.num}.png`} className="list-tag-img" />
                     </div>
-                    
-                </div>
-              </List.Item>
-            )}
-          />
-          </Col>
-        </Row>
-        {/* 分页器  */}
-        <Pagination total={myCount} defaultPageSize={servicePath.ArticleListNum} showSizeChanger={false} onChange={onChange} hideOnSinglePage={true}/>
+                  </div>
+                  
+              </div>
+            </List.Item>
+          )}
+        />
+        </Col>
+      </Row>
+      {/* 分页器  */}
+      <Pagination total={myCount} defaultPageSize={servicePath.ArticleListNum} showSizeChanger={false} onChange={onChange} hideOnSinglePage={true}/>
      
       {/* 底部 */}
       <Footer />

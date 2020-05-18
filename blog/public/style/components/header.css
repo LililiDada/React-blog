@@ -22,11 +22,9 @@
 
 /* 修改导航菜单 */
 .ant-menu-item-active{
-    color: #EB5055 !important;
     border-bottom: 2px solid transparent !important;
 }
 .ant-menu-item-selected{
-    color: #EB5055 !important;
     border-bottom: 2px solid transparent !important;
 }
 .header-menu{
@@ -39,7 +37,7 @@
 .ant-menu-horizontal > .ant-menu-item, .ant-menu-horizontal > .ant-menu-submenu {
     border-bottom: 2px solid transparent !important; 
 }
-.ant-menu-submenu-title:hover {
+.ant-menu-submenu-title:hover a,.ant-menu-item-selected>a,.ant-menu-item:hover a, .ant-menu-item-active a, .ant-menu:not(.ant-menu-inline) .ant-menu-submenu-open a, .ant-menu-submenu-active a{
     color:  #EB5055 !important;
 }
 .ant-menu-submenu-title{
@@ -51,4 +49,7 @@
 }
 .life{
     padding-right: 0;
+}
+.ant-menu-horizontal > .ant-menu-item-selected > a,.ant-menu-item-active a{
+    color: #EB5055 !important;
 }
