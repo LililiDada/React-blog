@@ -13,7 +13,7 @@ const Archives = () => {
       cateTitle:'Jan 2019',
       postList:[
         {
-          title: '使用create-react-app创建的项目木木木有',
+          title: '使用木木木有',
           date:'Jan 20,2019',
         },
         {
@@ -34,7 +34,7 @@ const Archives = () => {
       cateTitle:'Jan 2019',
       postList:[
         {
-          title: '使用create-react-app创建的项目木木木有',
+          title: '使用木木木有',
           date:'Jan 20,2019',
         },
         {
