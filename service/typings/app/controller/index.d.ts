@@ -3,11 +3,15 @@
 
 import 'egg';
 import ExportHome = require('../../../app/controller/home');
+import ExportAdminMain = require('../../../app/controller/admin/main');
 import ExportDefaultHome = require('../../../app/controller/default/home');
 
 declare module 'egg' {
   interface IController {
     home: ExportHome;
+    admin: {
+      main: ExportAdminMain;
+    }
     default: {
       home: ExportDefaultHome;
     }

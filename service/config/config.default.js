@@ -16,8 +16,12 @@ module.exports = appInfo => {
   config.keys = appInfo.name + '_1589383212329_811';
 
   // add your middleware config here
-  config.middleware = [];
+  config.middleware = [ 'errorHandler' ];
 
+  config.jwt = {
+    secret: 'dashanabcrypt',
+    expiresIn: 60 * 60 * 1, // 1小时过期
+  };
   // add your user config here
   const userConfig = {
     // myAppName: 'egg',

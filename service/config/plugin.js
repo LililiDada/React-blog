@@ -16,3 +16,10 @@ exports.cors = {
   enable: true,
   package: 'egg-cors',
 };
+
+// config/plugin.js
+exports.validate = {
+  enable: true,
+  package: 'egg-validate',
+};
+
