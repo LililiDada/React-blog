@@ -36,7 +36,7 @@ const Detailed = (props) => {
     }
   });
 
-  let html = marked(props.article_cointent)
+  let html = marked(props.article_content)
   return (
     <div className="blog-page">
       <Head>

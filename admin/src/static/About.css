@@ -1,0 +1,18 @@
+
+.add-about{
+    margin-bottom: 10px;
+    width: 200px;
+}
+.about-up{
+    height: 40px;
+    width: 40px;
+    line-height: 40px;
+    border-radius: 4px;
+    background-color: #1088e9;
+    color: #ffffff;
+    text-align: center;
+    font-size: 14px;
+}
+.collection-create-form_last-form-item {
+    margin-bottom: 0;
+  }

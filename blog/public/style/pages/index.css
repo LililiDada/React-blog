@@ -95,7 +95,7 @@ a,a:hover{
   width: 40px;
   line-height: 40px;
   border-radius: 4px;
-  background-color: #F2A021;
+  background-color: #eb5055;
   color: #fff;
   text-align:center;
   font-size:14px;
@@ -107,21 +107,21 @@ a,a:hover{
 }
 
 .ant-pagination-item-active a , .ant-pagination-item-container ,.ant-pagination-item-link-icon{
-  color: #F2A021 !important;
+  color: #eb5055 !important;
 }
 .ant-pagination-item:focus a, .ant-pagination-item:hover a{
-  color: #F2A021 !important;
+  color: #eb5055 !important;
   /* border: 1px solid #F2A021; */
 
 }
 .ant-pagination-item-active,.ant-pagination-item-active:focus, .ant-pagination-item-active:hover,
 .ant-pagination-item:hover,.ant-pagination-item-link:hover {
-  border: 1px solid #F2A021;
-  color: #F2A021 !important;
+  border: 1px solid #eb5055;
+  color: #eb5055 !important;
 }
 .ant-pagination-next:hover .ant-pagination-item-link,.ant-pagination-next:focus .ant-pagination-item-link ,.ant-pagination-prev:focus .ant-pagination-item-link,.ant-pagination-prev:hover .ant-pagination-item-link{
-  border-color: #F2A021;
-  color: #F2A021;
+  border-color: #eb5055;
+  color: #eb5055;
 }
 .ant-pagination-disabled a, .ant-pagination-disabled:hover a, .ant-pagination-disabled:focus a{
   color: rgba(0, 0, 0, 0.25) !important;

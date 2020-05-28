@@ -4,53 +4,75 @@ import '../static/AdminIndex.css'
 import { Layout, Menu, Breadcrumb } from 'antd';
 import {
   DesktopOutlined,
-  PieChartOutlined,
-  FileOutlined,
+  EditOutlined,
+  SmileOutlined,
+  BranchesOutlined,
+  AliwangwangOutlined
 } from '@ant-design/icons';
-import {Route, Router} from "react-router-dom";
+import {Route} from "react-router-dom";
 import AddArticle from "./AddArticle";
+import ArticleList from './ArticleList';
+import About from './About'
 const { Content, Footer, Sider } = Layout;
-// const { SubMenu } = Menu;
+const { SubMenu } = Menu;
 
-function AdminIndex(){
-    const [collapsed,seyCollapsed]= useState(false)
+function AdminIndex(props){
+    const [collapsed,setCollapsed]= useState(false)
 
   const onCollapse = collapsed => {
     console.log(collapsed);
-    seyCollapsed(collapsed)
+    setCollapsed(collapsed)
   };
 
+  const handleClick = e =>{
+    console.log(e)
+    if(e.key === 'articleList'){
+      props.history.push('/index/')
+    }else if(e.key === 'addArticle'){
+      props.history.push('/index/add')
+    }else if(e.key === 'about'){
+      props.history.push('/index/about')
+    }
+
+  }
   return(
     <Layout style={{ minHeight: '100vh' }}>
-        <Sider collapsible collapsed={collapsed} onCollapse={onCollapse}>
+        <Sider collapsible collapsed={collapsed} onCollapse={onCollapse} className='menu-list'>
           <div className="logo" />
-          <Menu theme="dark" defaultSelectedKeys={['1']} mode="inline">
-            <Menu.Item key="1" icon={<PieChartOutlined />}>
+          <Menu theme="dark" defaultSelectedKeys={['1']} mode="inline" onClick={handleClick}>
+            <Menu.Item key="articleList" icon={<DesktopOutlined />}>
               工作台
             </Menu.Item>
-            <Menu.Item key="2" icon={<DesktopOutlined />}>
+            {/* <Menu.Item key="2" icon={<PieChartOutlined />}>
               添加文章
-            </Menu.Item>
-            <Menu.Item key="3" icon={<DesktopOutlined />}>
-              文章列表
+            </Menu.Item> */}
+            <Menu.Item key="addArticle" icon={<EditOutlined />}>
+              编辑文章
             </Menu.Item>
             {/* <SubMenu key="sub1" icon={<UserOutlined />} title="文章管理">
               <Menu.Item key="3">添加文章</Menu.Item>
               <Menu.Item key="4">文章列表</Menu.Item>
             </SubMenu> */}
-            <Menu.Item key="9" icon={<FileOutlined />}>
+            {/* <Menu.Item key="9" icon={<FileOutlined />}>
               叨叨管理
-            </Menu.Item>
+            </Menu.Item> */}
+            <SubMenu key="sub1" icon={<SmileOutlined />} title="叨叨管理">
+              <Menu.Item key="about" icon={<AliwangwangOutlined />}>关于我</Menu.Item>
+              <Menu.Item key="4" icon={<BranchesOutlined />}>时间轴</Menu.Item>
+            </SubMenu>
           </Menu>
         </Sider>
-        <Layout className="site-layout">
+        <Layout className="site-layout" className={collapsed?'site-small':'site-big'}>
           <Content style={{ margin: '0 16px' }}>
             <Breadcrumb style={{ margin: '16px 0' }}>
               <Breadcrumb.Item>后台管理</Breadcrumb.Item>
               <Breadcrumb.Item>工作台</Breadcrumb.Item>
             </Breadcrumb>
-            <div className="site-layout-background" style={{ padding: 24, minHeight: 360 }}>
-              <Route path="/index/" exact component={AddArticle} />
+            <div className="site-layout-background" style={{ padding: 24, minHeight: 360 ,background: '#fff'}}>
+                <Route path="/index/add/" exact   component={AddArticle} />
+                <Route path="/index/add/:id"  exact   component={AddArticle} />
+                <Route path="/index/" exact  component={ArticleList} />
+                <Route path="/index/about" exact  component={About} />
             </div>
           </Content>
           <Footer style={{ textAlign: 'center' }}>李大山歪 ©2020 Created by Blog System</Footer>

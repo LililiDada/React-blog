@@ -32,7 +32,7 @@ class HomeController extends Controller {
               'article.title as title,' +
               'article.introduce as intorduce,' +
               "FROM_UNIXTIME(article.addTime,'%b  %d, %Y' ) as addTime," +
-              'article.article_cointent  as article_cointent  ,' +
+              'article.article_content  as article_content  ,' +
               'type.typeName as typeName ' +
               'FROM article LEFT JOIN type ON article.type_id =type.Id ' +
               'WHERE article.id=' + id;

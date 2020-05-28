@@ -1,0 +1,35 @@
+.list-div{
+    width: 100%;
+}
+/* .item-list{
+    border-bottom: 1px solid #ccc !important;
+
+} */
+.introduce-item{
+    padding-right: 25px;
+}
+.title-item{
+    padding-right: 10px;
+}
+
+/* 目录 */
+.menu-list{
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+}
+
+.site-big{
+    padding-left: 200px;
+}
+
+.site-small{
+    padding-left: 80px;
+}
+
+/* 分页 */
+.page-list{
+    margin-top: 20px;
+    text-align: center;
+}
