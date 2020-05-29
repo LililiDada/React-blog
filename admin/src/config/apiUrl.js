@@ -1,4 +1,4 @@
-const ipurl = 'http://127.0.0.1:8268/admin/';
+const ipurl = 'http://127.0.0.1:7001/admin/';
 
 let servicePath = {
     getTypeInfo:ipurl+'getTypeInfo',  //获取文章类别信息
@@ -9,7 +9,8 @@ let servicePath = {
     ArticleListNum:7,  //文章列表一次加载7篇文章
     getArticleById:ipurl+'getArticleById/',
     updateArticle: ipurl+'updateArticle',   //修改文章
-    getAboutMe: ipurl+'getAboutMe/',   //修改文章
+    getAboutMe: ipurl+'getAboutMe',   //获取‘关于’页面我的介绍
+    getAboutTime: ipurl+'getAboutTime',   //获取‘关于’页面时间轴
     delAbout:ipurl+'delAbout/',    // 删除“关于”记录
     addAbout:ipurl+'addAbout',     // 添加“关于”记录
     updateAbout:ipurl+'updateAbout',     // 修改“关于”记录

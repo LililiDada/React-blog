@@ -29,7 +29,6 @@ const Home = (list) => {
       })
     })
   };
-
   return(
     <div className='blog-page'>
       <Head>

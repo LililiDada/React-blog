@@ -8,6 +8,7 @@ class HomeController extends Controller {
     this.ctx.body = 'api接口';
   }
 
+  // 首页
   async getArticleList() {
     console.log(this.ctx.params.pageId);
     let sql = 'SELECT article.id as id,' +
@@ -26,6 +27,7 @@ class HomeController extends Controller {
     };
   }
 
+  // 文章详情
   async getArticleById() {
     let id = this.ctx.params.id;
     let sql = 'SELECT article.id as id,' +
@@ -40,14 +42,25 @@ class HomeController extends Controller {
     this.ctx.body = { data: results };
   }
 
+  // 叨叨页面数据
   async getAboutList() {
     let desSql = "SELECT id,content,FROM_UNIXTIME(create_time,'%b  %d, %Y') as createTime FROM about WHERE type=0";
     const describe = await this.app.mysql.query(desSql);
-    let recSql = "SELECT id,content,FROM_UNIXTIME(create_time,'%b  %d, %Y') as createTime FROM about WHERE type=1 ORDER BY create_time DESC";
+    let recSql = "SELECT id,content,FROM_UNIXTIME(create_time,'%b  %d, %Y') as createTime FROM about WHERE type=1 ORDER BY create_time DESC LIMIT 0, 1";
     const record = await this.app.mysql.query(recSql);
     this.ctx.body = { describe, record };
   }
 
+  // 叨叨页面加载更多时间轴
+  async getMoreTimeline() {
+    const num = this.ctx.params.offset;
+    let sql = `SELECT id,content,FROM_UNIXTIME(create_time,\'%b  %d, %Y\') as createTime FROM about WHERE type=1 ORDER BY create_time DESC LIMIT ${num}, 1`;
+    const results = await this.app.mysql.query(sql);
+    this.ctx.body = {
+      list: results,
+    };
+  }
+  // 归档页面
   async getArchiveList() {
     let sql = "SELECT id,title,FROM_UNIXTIME(addTime,'%b  %d, %Y') as date,FROM_UNIXTIME(addTime,'%b %Y') as month FROM article ORDER BY addTime DESC";
     const results = await this.app.mysql.query(sql);

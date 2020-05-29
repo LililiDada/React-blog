@@ -114,7 +114,15 @@ class MainController extends Controller {
 
   // 获取关于页面关于我记录
   async getAboutMe() {
-    const sql = "SELECT id,content,FROM_UNIXTIME(create_time,'%Y-%m-%d') as createTime FROM about WHERE type=0";
+    const sql = "SELECT id,content,FROM_UNIXTIME(create_time,'%Y/%c/%d') as createTime FROM about WHERE type=0";
+    const results = await this.app.mysql.query(sql);
+    this.ctx.body = {
+      list: results,
+    };
+  }
+
+  async getAboutTime() {
+    const sql = "SELECT id,content,FROM_UNIXTIME(create_time,'%Y/%c/%d') as createTime FROM about WHERE type=1 ORDER BY create_time DESC";
     const results = await this.app.mysql.query(sql);
     this.ctx.body = {
       list: results,
@@ -144,10 +152,10 @@ class MainController extends Controller {
     };
   }
 
-  // 修改文章
+  // 修改关于记录
   async updateAbout() {
     const datas = this.ctx.request.body;
-    const result = await this.app.mysql.update('article', datas);
+    const result = await this.app.mysql.update('about', datas);
     const updateSuccess = result.affectedRows === 1;
     this.ctx.body = {
       isSuccess: updateSuccess,

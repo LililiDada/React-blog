@@ -6,7 +6,6 @@ import { request } from "../config/request";
 import servicePath from "../config/apiUrl";
 import { ExclamationCircleOutlined } from '@ant-design/icons';
 const { confirm } = Modal;
-
 function About(props){
     const [list,setList] =useState([]);
     const [visible, setVisible] = useState(false);
@@ -19,7 +18,7 @@ function About(props){
         (async()=>{
             const options ={
                 method:'GET',
-                url:servicePath.getAboutMe,
+                url:servicePath.getAboutTime,
             }
             const res = await request(options);
             if(res.data.list){
@@ -73,7 +72,6 @@ function About(props){
                 message.success('没有任何改变！')
             },
         });
-        
     }
     
     // 弹出层添加/修改记录
@@ -83,7 +81,7 @@ function About(props){
             method:"POST",
             url:servicePath.updateAbout,
             data:{
-                type:0,
+                type:1,
                 content:record,
                 id:id,
                 create_time: (new Date(updateDate).getTime())/1000
@@ -97,33 +95,33 @@ function About(props){
                 }
             })
             setList(list)
-            message.success("修改‘关于我’记录成功！")
+            message.success("修改‘时间轴’记录成功！")
             setVisible(false);
         }else{
-            message.error("修改‘关于我’记录成功！")
+            message.error("修改‘时间轴’记录成功！")
         }
      }else{
         const options={
             method:"POST",
             url:servicePath.addAbout,
             data:{
-                type:0,
+                type:1,
                 content:record,
                 create_time: Math.round(new Date() / 1000)
             }
         }
         const res = await request(options);
          if(res.data.isSuccess){
-            message.success("添加‘关于我’记录成功！")
+            message.success("添加‘时间轴’记录成功！")
             setVisible(false);
             const dataProps = {
                 id:res.data.insertId,
                 content:record,
                 createTime:new Date().toLocaleDateString()
             }
-            setList([...list,dataProps]);
+            setList([dataProps,...list]);
          }else{
-            message.error("添加‘关于我’记录失败！")
+            message.error("添加‘时间轴’记录失败！")
          }
      }
      console.log(record)
@@ -161,6 +159,9 @@ function About(props){
                 }
                 bordered
                 dataSource={list}
+                pagination={{
+                    pageSize: 5,
+                  }}
                 renderItem={item => (
                     <List.Item className="item-list">
                         <Row className="list-div">
@@ -175,9 +176,9 @@ function About(props){
                     </List.Item>
                 )}
             />
-            <BackTop visibilityHeight={100}>
+            {/* <BackTop visibilityHeight={100}>
                 <div className='about-up'>UP</div>
-            </BackTop>
+            </BackTop> */}
         </div>
     )
 }

@@ -42,9 +42,11 @@ const Detailed = (props) => {
       <Head>
         <title>博客详情</title>
       </Head>
-      <Header />
-      <Row className="comm-main" type="flex" justify="center">
-        <Col className="comm-left" xs={20} sm={18} md={16} lg={14} xl={10}>
+      <Header/>
+      {/* 顶部占位 */}
+      <div className="header-placeholder"></div>
+      <Row className="comm-main detailed-mian" type="flex" justify="center" >
+        <Col className="comm-left detailed-left" xs={20} sm={18} md={16} lg={14} xl={10}>
           <div className="detailed-title">
             {props.title}
           </div>
@@ -57,7 +59,7 @@ const Detailed = (props) => {
           </div>
         </Col>
         <Col xs={0} sm={0} md={0} lg={4} xl={3}>
-          <Affix offsetTop={9} className="article-menu">
+          <Affix offsetTop={66} className="article-menu">
               {tocify && tocify.render()}
           </Affix>
         </Col>

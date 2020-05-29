@@ -44,11 +44,7 @@ const Archives = () => {
         {
           title: 'Title 3',
           date:'Jan 20,2019',
-        },
-        {
-          title: 'Title 4',
-          date:'Jan 20,2019',
-        },
+        }
       ]
     }
   ]

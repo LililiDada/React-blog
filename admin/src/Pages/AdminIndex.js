@@ -12,7 +12,9 @@ import {
 import {Route} from "react-router-dom";
 import AddArticle from "./AddArticle";
 import ArticleList from './ArticleList';
-import About from './About'
+import About from './About';
+import Timeline from './Timeline';
+
 const { Content, Footer, Sider } = Layout;
 const { SubMenu } = Menu;
 
@@ -32,6 +34,8 @@ function AdminIndex(props){
       props.history.push('/index/add')
     }else if(e.key === 'about'){
       props.history.push('/index/about')
+    }else{
+      props.history.push('/index/timeline')
     }
 
   }
@@ -58,7 +62,7 @@ function AdminIndex(props){
             </Menu.Item> */}
             <SubMenu key="sub1" icon={<SmileOutlined />} title="叨叨管理">
               <Menu.Item key="about" icon={<AliwangwangOutlined />}>关于我</Menu.Item>
-              <Menu.Item key="4" icon={<BranchesOutlined />}>时间轴</Menu.Item>
+              <Menu.Item key="timeline" icon={<BranchesOutlined />}>时间轴</Menu.Item>
             </SubMenu>
           </Menu>
         </Sider>
@@ -73,6 +77,7 @@ function AdminIndex(props){
                 <Route path="/index/add/:id"  exact   component={AddArticle} />
                 <Route path="/index/" exact  component={ArticleList} />
                 <Route path="/index/about" exact  component={About} />
+                <Route path="/index/timeline" exact  component={Timeline} />
             </div>
           </Content>
           <Footer style={{ textAlign: 'center' }}>李大山歪 ©2020 Created by Blog System</Footer>
