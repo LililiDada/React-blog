@@ -46,7 +46,7 @@ class HomeController extends Controller {
   async getAboutList() {
     let desSql = "SELECT id,content,FROM_UNIXTIME(create_time,'%b  %d, %Y') as createTime FROM about WHERE type=0";
     const describe = await this.app.mysql.query(desSql);
-    let recSql = "SELECT id,content,FROM_UNIXTIME(create_time,'%b  %d, %Y') as createTime FROM about WHERE type=1 ORDER BY create_time DESC LIMIT 0, 1";
+    let recSql = "SELECT id,content,FROM_UNIXTIME(create_time,'%b  %d, %Y') as createTime FROM about WHERE type=1 ORDER BY create_time DESC";
     const record = await this.app.mysql.query(recSql);
     this.ctx.body = { describe, record };
   }

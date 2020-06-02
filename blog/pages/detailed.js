@@ -1,11 +1,11 @@
 // 详情页面
 import React,{useState} from 'react'
+import "../public/style/pages/detailed.css"
 import Head from 'next/head'
 import Header from '../components/Header.js'
 import Footer from '../components/Footer.js'
 import servicePath from '../config/apiUrl.js'
 import axios from 'axios'
-import "../public/style/pages/detailed.css"
 import {Row,Col,Affix} from 'antd'
 
 import marked from 'marked'

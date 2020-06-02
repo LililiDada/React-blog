@@ -1,12 +1,12 @@
 .comm-list {
   background-color: #ffffff;
   border-radius: 5px;
-  box-shadow: 0 1px 4px rgba(0,0,0,.04);
+  box-shadow: 0 1px 4px rgba(0,0,0,.1);
   margin-bottom: 28px !important;
   position: relative;
 }
 .comm-list:hover{
-    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.4);
 }
 .list-top {
   position: relative;
@@ -18,8 +18,8 @@
   clip-path: polygon(0 0, 100% 0%, 100% 100%, 100% 100%, 0 calc(100% - 40px));
 }
 .list-mask {
-  padding: 35px 45px 0;
-  background-color: rgba(0, 0, 0, 0.5);
+  padding: 35px 45px 20px;
+  background-color: rgba(0, 0, 0, 0.45);
   clip-path: polygon(0 0, 100% 0%, 100% 100%, 100% 100%, 0 calc(100% - 40px));
   width: 100%;
   height: 100%;
@@ -28,7 +28,7 @@
   cursor: pointer;
 }
 .list-desco {
-  background-color: rgba(0, 0, 0, 0.4);
+  background-color: rgba(0, 0, 0, 0.5);
   width: 50%;
   height: 17%;
   position: absolute;

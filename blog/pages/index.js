@@ -36,7 +36,7 @@ const Home = (list) => {
       </Head>
       <Header />
       <Row className="comm-main" type="flex" justify="center">
-        <Col className="comm-left" xs={18} sm={18} md={16} lg={20} xl={14}  >
+        <Col className="comm-left" xs={18} sm={18} md={16} lg={20} xl={15}  >
         <List
           grid={{ gutter: 35, column: 3 ,xs:1,sm:2, md:2,lg:3,xl:3}}
           dataSource={mylist}
@@ -44,10 +44,10 @@ const Home = (list) => {
             <List.Item className='comm-list'>
               <Link  href={{pathname:'/detailed',query:{id:item.id}}} >
                 <a>
-                  <div className="list-top" style={{backgroundImage: `url(${backImg})`}}>
+                  <div className="list-top" style={{backgroundImage: `url(/assets/9l8e0e9s1h9a${item.id%20<10?'0'+item.id%20:item.id%20}.jpg)`}}>
                     <div className="list-mask">
-                          { item.intorduce.substr(0,[90]) }
-                          { item.intorduce.length>90 ? <span>...</span> : null }
+                          { item.intorduce.substr(0,[60]) }
+                          { item.intorduce.length>60 ? <span>...</span> : null }
                     </div>
                     <div className="list-desco"></div>
                   </div>
@@ -62,7 +62,7 @@ const Home = (list) => {
                   <div className="list-footer-tag">
                     <div className="list-label"><a>{item.typeName}</a></div>
                     <div className="list-tag">
-                      <img src={`/assets/icon/202005150${item.num}.png`} className="list-tag-img" />
+                      <img src={`/assets/icon/202005150${item.id%10}.png`} className="list-tag-img" />
                     </div>
                   </div>
                   

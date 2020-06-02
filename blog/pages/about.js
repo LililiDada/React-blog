@@ -4,36 +4,25 @@ import Head from 'next/head'
 import Header from '../components/Header.js'
 import Footer from '../components/Footer.js'
 import "../public/style/pages/about.css"
-import {Row,Col} from 'antd'
+import {Row,Col,message,BackTop} from 'antd'
 import axios from 'axios'
 import  servicePath  from '../config/apiUrl'
 const Archives = (list) => {
   const [describe,setDescribe] = useState(list.describe);
-  const [record,setRecord] = useState(list.record);
-  const [offset,setOffset] = useState(servicePath.timelineOffset)
+  const [completeRecord,setCompleteRecord] = useState(list.record);
+  const [record,setRecord] = useState(list.record.slice(0,5));
+  const [currentPage,setCurrentPage] = useState(1)
 
-  const loadMore = async()=>{
-    const lists = [
-      {
-        id: 1,
-        content: '爷爷75大寿，距离爷爷生病已过去70天，时间慢一点走吧，让爷爷多陪我们一点',
-        createTime: 'May  18, 2020',
-      },
-      {
-        id: 1,
-        content: '并有幸通过环创工作室的考核，成为环创的一员，和大家一起学习、讨论技术；并有幸通过环创工作室的考核，成为环创的一员，和大家一起学习、讨论技术；',
-        createTime: 'May  18, 2020'
-      },
-      {
-        id: 1,
-        content: '并有幸通过环创工作室的考核，成为环创的一员，和大家一起学习、讨论技术；并有幸通过环创工作室的考核，成为环创的一员，和大家一起学习、讨论技术；',
-        createTime: 'May  18, 2020'
+  const loadMore = ()=>{
+    const pageSize = servicePath.pageSize
+    let skipNum = currentPage * pageSize;
+      let newArr = (skipNum + pageSize >= completeRecord.length) ? completeRecord.slice(skipNum, completeRecord.length) : completeRecord.slice(skipNum, skipNum + pageSize);
+      if(newArr.length===0){
+        message.success('数据已加载完毕');
+        return;
       }
-    ]
-    axios(servicePath.getMoreTimeline+offset).then((res)=>{
-      console.log(res)
-    })
-    setRecord([...record,...lists])
+      setRecord([...record,...newArr]);
+      setCurrentPage(currentPage+1);
   }
   
   return (
@@ -89,6 +78,10 @@ const Archives = (list) => {
     </Row>
     {/* 底部 */}
     <Footer />
+    {/* 返回顶部按钮 */}
+    <BackTop>
+        <div className="back-top">UP</div>
+      </BackTop>
   </div>
   )
 }
