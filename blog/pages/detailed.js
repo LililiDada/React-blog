@@ -40,22 +40,30 @@ const Detailed = (props) => {
   return (
     <div className="blog-page">
       <Head>
-        <title>博客详情</title>
+        <title>大山歪-{props.title}</title>
+        <meta name="description" content={props.title}></meta>
       </Head>
       <Header/>
       {/* 顶部占位 */}
       <div className="header-placeholder"></div>
       <Row className="comm-main detailed-mian" type="flex" justify="center" >
-        <Col className="comm-left detailed-left" xs={20} sm={18} md={16} lg={14} xl={10}>
-          <div className="detailed-title">
-            {props.title}
-          </div>
-  
-          <div className="list-icon center">
-            Published on {props.addTime} in {props.typeName}
-          </div>
-  
-          <div className="detailed-content" dangerouslySetInnerHTML = {{__html:html}}>
+        <Col className="comm-left" xs={20} sm={18} md={16} lg={14} xl={10}>
+          <div className="detailed-left"> 
+          {/* <div className="detailed-left">  */}
+            <div className="detailed-title">
+              {props.title}
+            </div>
+    
+            <div className="list-icon center">
+              Published on {props.addTime} in {props.typeName}
+            </div>
+
+            {
+              props.intorduce && 
+                <div className="detailed-intorduce" dangerouslySetInnerHTML = {{__html: marked(props.intorduce)}}></div>
+            }
+            <div className="detailed-content" dangerouslySetInnerHTML = {{__html:html}}>
+            </div>
           </div>
         </Col>
         <Col xs={0} sm={0} md={0} lg={4} xl={3}>
@@ -74,7 +82,6 @@ Detailed.getInitialProps = async(context)=>{
   let id = context.query.id;
   const promise = new Promise((resolve)=>{
     axios(servicePath.getArticleById+id).then((res)=>{
-      console.log(res.data.data[0])
       resolve(res.data.data[0])
     })
   })

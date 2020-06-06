@@ -42,7 +42,9 @@ function AdminIndex(props){
   return(
     <Layout style={{ minHeight: '100vh' }}>
         <Sider collapsible collapsed={collapsed} onCollapse={onCollapse} className='menu-list'>
-          <div className="logo" />
+          <div className="logo">
+            <img src='/blog.png'/>
+          </div>
           <Menu theme="dark" defaultSelectedKeys={['1']} mode="inline" onClick={handleClick}>
             <Menu.Item key="articleList" icon={<DesktopOutlined />}>
               工作台

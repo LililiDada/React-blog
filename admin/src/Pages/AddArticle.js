@@ -3,7 +3,6 @@ import marked from "marked";
 import hljs from "highlight.js";
 import "../static/AddArticle.css";
 import {Row,Col,Input,Select,Button,DatePicker, message} from 'antd';
-import axios from "axios";
 import servicePath from '../config/apiUrl'; 
 import {request} from '../config/request';
 const {Option} = Select;
@@ -12,7 +11,6 @@ const {TextArea} = Input;
 function AddArticle(props){
 
     useEffect(() => {
-        console.log(props);
         getTypeInfo();
         const tmpId = props.match.params.id;
         if(tmpId){

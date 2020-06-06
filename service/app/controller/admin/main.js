@@ -40,7 +40,6 @@ class MainController extends Controller {
 
   // 获取后台分类信息
   async getTypeInfo() {
-    console.log(this.ctx.state);
     const resType = await this.app.mysql.select('type');
     this.ctx.body = {
       data: resType,
@@ -62,7 +61,6 @@ class MainController extends Controller {
 
   // 获取文章列表
   async getArticleList() {
-    console.log(this.ctx.params.offset);
     const sql = 'SELECT article.id as id,' +
               'article.title as title,' +
               'article.introduce as introduce,' +

@@ -1,24 +1,50 @@
+/* add */
+* {
+    margin: 0;
+    padding: 0;
+}    
 html,body{
     margin: 0;
     padding: 0;
     background-color: #f7f7f7;
     height: 100%;
 }
-.comm-main{
+/* hidden */
+/* .comm-main{
     padding: 6rem 0 0;
     box-sizing: border-box;
     flex: 1;
     background-color: #F7F7F7;
+} */
+/* add */
+.comm-main{
+    padding-top: 6rem;
+    padding-bottom: 32767px;
+    margin-bottom: -32767px;
+    background-color: #F7F7F7;
+}
+/* add */
+.comm-left{
+    padding-bottom: 3.5rem;
 }
 #__next{
     height: 100%;
     width: 100%;
 }
-.blog-page{
+/* hiddin */
+/* .blog-page{
     display: flex;
     flex-direction: column;
     height: 100%;
     width: 100%;
+} */
+/* add */
+.blog-page{
+    overflow: hidden;
+    _height: 100%;
+    height: auto !important;
+    min-height: 100%;
+    position: relative;
 }
 ::-webkit-scrollbar { /*滚动条整体样式*/
     width: 6px !important;; /*高宽分别对应横竖滚动条的尺寸*/

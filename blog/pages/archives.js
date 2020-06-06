@@ -54,8 +54,7 @@ const Archives = (list) => {
   return (
     <div className='blog-page'>
       <Head>
-        <title>Archives</title>
-        <link rel='stylesheet' href='/_next/public/style/pages/archives.css' />
+        <title>归档 | 大山歪-冲就完事了</title>
       </Head>
       <Header />
       <Row className="comm-main archives-mian" type="flex" justify="center">

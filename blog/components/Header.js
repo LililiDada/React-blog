@@ -9,8 +9,12 @@ const Header = ()=>{
         <div className="header">
         <Row align="middle" justify="center">
             <Col xs={13} sm={10} md={10} lg={11} xl={9} className="header-title">
-                <img className="header-logo" src='/assets/blog.png' />
-                <span className="header-txt">李大山歪</span>
+                <Link href={{pathname:'/'}}>
+                    <div className="header-left">
+                        <img className="header-logo" src='/assets/blog.png' />
+                        <span className="header-txt">李大山歪</span>
+                    </div>
+                </Link>
             </Col>
             <Col xs={7} sm={8} md={8} lg={9} xl={7} className="header-menu">
                 <Menu mode="horizontal">

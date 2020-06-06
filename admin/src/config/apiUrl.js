@@ -1,4 +1,4 @@
-const ipurl = 'http://127.0.0.1:7001/admin/';
+const ipurl = 'http://service.dashanwai.cn/admin/';
 
 let servicePath = {
     getTypeInfo:ipurl+'getTypeInfo',  //获取文章类别信息

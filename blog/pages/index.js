@@ -16,15 +16,14 @@ const Home = (list) => {
 
   // 分页
   const onChange = async(page) => {
-    console.log(page);
     await new Promise((resolve)=>{
       let offset =  servicePath.ArticleListNum * (page-1)//偏移量
       axios(servicePath.getArticleList + offset).then((res)=>{
-        res.data.data.forEach((item)=>{
-          let num =  parseInt(Math.random()*10)
-          item.num = num
-        })
-        console.log(res.data.data)
+        // res.data.data.forEach((item)=>{
+        //   let num =  parseInt(Math.random()*10)
+        //   item.num = num
+        // })
+        // console.log(res.data.data)
         setMylist(res.data.data)
       })
     })
@@ -32,7 +31,8 @@ const Home = (list) => {
   return(
     <div className='blog-page'>
       <Head>
-        <title>Home</title>
+        <title>首页 | 大山歪-冲就完事了</title>
+        <meta name="description" content="首页 | 大山歪-冲就完事了"></meta>
       </Head>
       <Header />
       <Row className="comm-main" type="flex" justify="center">
@@ -46,8 +46,8 @@ const Home = (list) => {
                 <a>
                   <div className="list-top" style={{backgroundImage: `url(/assets/9l8e0e9s1h9a${item.id%20<10?'0'+item.id%20:item.id%20}.jpg)`}}>
                     <div className="list-mask">
-                          { item.intorduce.substr(0,[60]) }
-                          { item.intorduce.length>60 ? <span>...</span> : null }
+                          { item.intorduce.substr(0,[80]) }
+                          { item.intorduce.length>80 ? <span>...</span> : null }
                     </div>
                     <div className="list-desco"></div>
                   </div>
@@ -87,11 +87,10 @@ const Home = (list) => {
 Home.getInitialProps = async () =>{
   const promise = new Promise((resolve)=>{
     axios(servicePath.getArticleList + 0).then((res)=>{
-      console.log(res.data)
-      res.data.data.forEach((item)=>{
-        let num =  parseInt(Math.random()*10)
-        item.num = num
-      })
+      // res.data.data.forEach((item)=>{
+      //   let num =  parseInt(Math.random()*10)
+      //   item.num = num
+      // })
       resolve(res.data)
     })
   })

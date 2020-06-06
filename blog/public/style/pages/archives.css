@@ -12,6 +12,7 @@
     padding: 0 30px;
     position: relative;
     margin: 10px auto 20px;
+    font-size: 17px;
 }
 .categorys-title::before{
     position: absolute;
@@ -36,7 +37,7 @@
     transform: scale(1.04);
 }
 .post-title a{
-    font-size: 14px;
+    font-size: 15px;
     display: block;
     overflow: hidden;
     white-space: nowrap;

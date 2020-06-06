@@ -16,11 +16,13 @@
   border-radius: 5px 5px 0 0;
   width: 100%;
   clip-path: polygon(0 0, 100% 0%, 100% 100%, 100% 100%, 0 calc(100% - 40px));
+  -webkit-clip-path: polygon(0 0, 100% 0%, 100% 100%, 100% 100%, 0 calc(100% - 40px));
 }
 .list-mask {
   padding: 35px 45px 20px;
   background-color: rgba(0, 0, 0, 0.45);
   clip-path: polygon(0 0, 100% 0%, 100% 100%, 100% 100%, 0 calc(100% - 40px));
+  -webkit-clip-path: polygon(0 0, 100% 0%, 100% 100%, 100% 100%, 0 calc(100% - 40px));
   width: 100%;
   height: 100%;
   opacity: 0;
@@ -105,25 +107,4 @@ a,a:hover{
   text-align: center;
 }
 
-.ant-pagination-item-active a , .ant-pagination-item-container ,.ant-pagination-item-link-icon{
-  color: #eb5055 !important;
-}
-.ant-pagination-item:focus a, .ant-pagination-item:hover a{
-  color: #eb5055 !important;
-  /* border: 1px solid #F2A021; */
 
-}
-.ant-pagination-item-active,.ant-pagination-item-active:focus, .ant-pagination-item-active:hover,
-.ant-pagination-item:hover,.ant-pagination-item-link:hover {
-  border: 1px solid #eb5055;
-  color: #eb5055 !important;
-}
-.ant-pagination-next:hover .ant-pagination-item-link,.ant-pagination-next:focus .ant-pagination-item-link ,.ant-pagination-prev:focus .ant-pagination-item-link,.ant-pagination-prev:hover .ant-pagination-item-link{
-  border-color: #eb5055;
-  color: #eb5055;
-}
-.ant-pagination-disabled a, .ant-pagination-disabled:hover a, .ant-pagination-disabled:focus a{
-  color: rgba(0, 0, 0, 0.25) !important;
-  border-color: #d9d9d9 !important;
-  cursor: not-allowed;
-}

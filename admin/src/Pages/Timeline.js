@@ -98,7 +98,7 @@ function About(props){
             message.success("修改‘时间轴’记录成功！")
             setVisible(false);
         }else{
-            message.error("修改‘时间轴’记录成功！")
+            message.error("修改‘时间轴’记录失败！")
         }
      }else{
         const options={

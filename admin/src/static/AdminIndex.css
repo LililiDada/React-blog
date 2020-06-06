@@ -1,8 +1,12 @@
-#components-layout-demo-side .logo {
-    height: 32px;
-    background: rgba(255, 255, 255, 0.2);
-    margin: 16px;
-  }
+.logo {
+    height: 50px;
+    margin:10px 0 16px 20px;
+    line-height: 50px;
+}
+
+.logo img{
+  width: 80px;
+}
   
 .site-layout .site-layout-background {
     background: #fff;

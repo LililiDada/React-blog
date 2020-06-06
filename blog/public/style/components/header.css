@@ -11,6 +11,11 @@
     right: 0;
     z-index: 999;
 }
+.header-left{
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
 .header-title{
     display: flex;
     align-items: center;
@@ -22,7 +27,7 @@
 .header-txt{
     color: #333333;
     font-weight: 600;
-    font-size: 1.4rem;
+    font-size: 1.47rem;
 }
 
 /* 修改导航菜单 */
@@ -32,9 +37,11 @@
 .ant-menu-item-selected{
     border-bottom: 2px solid transparent !important;
 }
-.header-menu{
+/* .header-menu{
     text-align: right;
-}
+    display: flex;
+    justify-content: flex-end;
+} */
 .ant-menu-item:hover, .ant-menu-item-active, .ant-menu:not(.ant-menu-inline) .ant-menu-submenu-open, .ant-menu-submenu-active{
     color:  #EB5055 !important;
     border-bottom: 2px solid transparent !important;
@@ -58,3 +65,38 @@
 .ant-menu-horizontal > .ant-menu-item-selected > a,.ant-menu-item-active a{
     color: #EB5055 !important;
 }
+
+.ant-pagination-item-active a , .ant-pagination-item-container ,.ant-pagination-item-link-icon,.ant-menu-item-selected{
+    color: #eb5055 !important;
+  }
+  .ant-pagination-item:focus a, .ant-pagination-item:hover a{
+    color: #eb5055 !important;
+  
+  }
+  .ant-pagination-item-active,.ant-pagination-item-active:focus, .ant-pagination-item-active:hover,
+  .ant-pagination-item:hover,.ant-pagination-item-link:hover {
+    border: 1px solid #eb5055;
+    color: #eb5055 !important;
+  }
+  .ant-pagination-next:hover .ant-pagination-item-link,.ant-pagination-next:focus .ant-pagination-item-link ,.ant-pagination-prev:focus .ant-pagination-item-link,.ant-pagination-prev:hover .ant-pagination-item-link{
+    border-color: #eb5055;
+    color: #eb5055;
+  }
+  .ant-pagination-disabled a, .ant-pagination-disabled:hover a, .ant-pagination-disabled:focus a{
+    color: rgba(0, 0, 0, 0.25) !important;
+    border-color: #d9d9d9 !important;
+    cursor: not-allowed;
+  }
+
+  .ant-menu-item:hover, .ant-menu-item-active, .ant-menu:not(.ant-menu-inline) .ant-menu-submenu-open, .ant-menu-submenu-active, .ant-menu-submenu-title:hover {
+    color: #eb5055 !important;
+  }
+
+  .ant-menu {
+    text-align: right;
+}
+  .ant-menu-horizontal > .ant-menu-item:hover, .ant-menu-horizontal > .ant-menu-item-active, .ant-menu-horizontal > .ant-menu-submenu-active, .ant-menu-horizontal > .ant-menu-item-open, .ant-menu-horizontal > .ant-menu-submenu-open, .ant-menu-horizontal > .ant-menu-item-selected, .ant-menu-horizontal > .ant-menu-submenu-selected {
+    color: #eb5055 !important;
+    border-bottom: 2px solid #eb5055;
+}
+.ant-menu .ant-menu-item {text-align: left;}

@@ -11,4 +11,5 @@
 /admin/node_modules
 /admin/yarn.lock
 /admin/package-lock.json
+/admin/build
 

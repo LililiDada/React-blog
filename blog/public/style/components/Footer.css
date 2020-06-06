@@ -6,6 +6,10 @@
     color: #333333;
     text-align: center;
     font-weight: 600;
+    /* add */
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
 }
 .footer-top{
     display: flex;

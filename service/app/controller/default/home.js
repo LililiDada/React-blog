@@ -10,7 +10,6 @@ class HomeController extends Controller {
 
   // 首页
   async getArticleList() {
-    console.log(this.ctx.params.pageId);
     let sql = 'SELECT article.id as id,' +
               'article.title as title,' +
               'article.introduce as intorduce,' +
@@ -18,7 +17,7 @@ class HomeController extends Controller {
               'type.typeName as typeName ' +
               'FROM article LEFT JOIN type ON article.type_id =type.Id ' +
               'ORDER BY article.addTime DESC ' +
-              'LIMIT ' + this.ctx.params.pageId + ', 12';
+              'LIMIT ' + this.ctx.params.pageId + ', 9';
     const results = await this.app.mysql.query(sql);
     const count = await this.app.mysql.query('SELECT COUNT(*) as count FROM  article');
     this.ctx.body = {

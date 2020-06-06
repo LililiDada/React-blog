@@ -2,7 +2,6 @@ import React,{useState} from 'react';
 import 'antd/dist/antd.css';
 import {Card,Input,Button,Spin,message} from 'antd';
 import { UserOutlined,LockOutlined } from '@ant-design/icons';
-import axios from 'axios';
 import servicePath from '../config/apiUrl';
 import "../static/Login.css";
 import {login}  from '../config/request';

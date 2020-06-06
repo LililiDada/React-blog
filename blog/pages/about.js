@@ -28,7 +28,7 @@ const Archives = (list) => {
   return (
     <div className='blog-page'>
     <Head>
-      <title>Archives</title>
+      <title>叨叨 | 大山歪-冲就完事了</title>
     </Head>
     <Header />
     <Row className="comm-main about-page" type="flex" justify="center">
