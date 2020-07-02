@@ -11,15 +11,21 @@
 博客后端：egg.js
 
 ### 使用描述
-博客前台（blog文件夹）：
+博客前台（blog文件夹）
 ```
 npm install
-
+npm run dev
 ```
 
-博客后台（admin文件夹）：
+博客后台（admin文件夹）
+```
+npm install
+npm run dev
+```
 
-博客后端（service文件夹）：
-
-
+博客后端（service文件夹）
+```
+npm install
+npm run start
+```
 
