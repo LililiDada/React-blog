@@ -18,7 +18,7 @@
     "highlight.js": "^10.0.3",
     "indexof": "^0.0.1",
     "less": "^3.11.2",
-    "lodash": "^4.17.15",
+    "lodash": "^4.17.19",
     "markdown-navbar": "^1.0.7",
     "marked": "^1.0.0",
     "next": "9.3.6",
